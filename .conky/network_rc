@@ -1,0 +1,55 @@
+conky.config = {
+	background = false,
+	font = 'Noto sans:size=10',
+	use_xft = true,
+	xftalpha = 0.9,
+	update_interval = 1,
+	imlib_cache_size = 0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type  = 'dock',
+	--own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 180,
+	own_window_colour = '#000000',
+	double_buffer = true,
+	minimum_width = 225,
+	minimum_height = 100,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	default_color = '#101010',
+	default_shade_color = '#101010',
+	alignment = 'top_right',
+	gap_x = 320,--320
+	gap_y = 380,--383
+	no_buffers = true,
+	cpu_avg_samples = 1,
+	uppercase = false,
+	border_inner_margin = 15,
+	if_up_strictness = 'link',
+
+--colors
+	color0 = '#bbb',
+	--color1 = '#16A085',
+	color1 = '#2CA2A8',
+	color2 = '#aaa',
+	color3 = '#ddd',
+
+};
+
+conky.text = [[
+${color1}${font Oswald:size=10:bold}NETWORK ${color3} ${hr 2}
+${if_up enp1s0}
+${color3}${font Noto Sans:size=10}Down: ${downspeed enp1s0}/s ${alignr}Up: ${upspeed enp1s0} /s
+${color1}${color1}${downspeedgraph enp1s0 20,90 444444 eeeeee} ${alignr}${color1}${upspeedgraph enp1s0 20,90 444444 eeeeee}
+${color3}  Total: ${totaldown enp1s0} ${alignr}Total: ${totalup enp1s0}
+#${else}${if_up enp1s0}
+#${color3}${font Noto Sans:size=10}Down: ${downspeed enp1s0}/s ${alignr}Up: ${upspeed enp1s0} /s
+#${color1}${downspeedgraph enp1s0 20,90 444444 eeeeee} ${alignr}${color1}${upspeedgraph enp1s0 20,90 444444 eeeeee}
+#${color3}  Total: ${totaldown enp1s0} ${alignr}Total: ${totalup enp1s0}
+
+${color3}${font Noto Sans:size=10}IP: ${color1}${texeci 3600 curl -s https://api.myip.com | jq -r .ip } | ${color1}${texeci 3600 curl -s https://api.myip.com | jq -r .country }
+${endif}]];

@@ -1,0 +1,47 @@
+conky.config = {
+	background = false,
+	font = 'Noto sans:size=10',
+	use_xft = true,
+	xftalpha = 0.9,
+	update_interval = 2,
+	imlib_cache_size = 0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type = 'dock',
+	--#own_window_transparent yes
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 180,
+	own_window_colour = '#000000',
+	double_buffer = true,
+	minimum_width = 225,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	default_color = '#101010',
+	default_shade_color = '#101010',
+	alignment = 'top_right',
+	gap_x = 320,
+	gap_y = 200,
+	no_buffers = true,
+	cpu_avg_samples = 1,
+	uppercase = false,
+	border_inner_margin = 15,
+
+--colors
+	color0 = '#bbb',
+	color1 = '#2CA2A8',
+	color2 = '#aaa',
+	color3 = '#ddd',
+
+};
+
+conky.text = [[
+${color1}${font Oswald:size=10:bold}SYSTEM ${color3} ${hr 2}
+${color3}${font Noto Sans:size=10}
+${color0}Hostname: $alignr${color1}$nodename
+${color0}Distribution: $alignr${color1} ${exec sed -n 1p /etc/lsb-release | cut -c 12-18} ${exec sed -n 3p /etc/lsb-release | cut -c 18-}
+${color0}Release: $alignr${color1} ${exec sed -n 2p /etc/lsb-release | cut -c 17-}
+${color0}Kernel: $alignr${color1}$kernel
+${color0}Uptime: $alignr${color1}$uptime]];

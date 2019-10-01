@@ -1,0 +1,60 @@
+conky.config = {
+	background = false,
+	font = 'Noto sans:size=10',
+	use_xft = true,
+	xftalpha = 0.9,
+	update_interval = 2,
+	imlib_cache_size = 0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type = 'dock',
+	--own_window_transparent yes
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 180,
+	own_window_colour = '#000000',
+	double_buffer = true,
+	minimum_width = 225,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	default_color = '#101010',
+	default_shade_color = '#101010',
+	alignment = 'top_right',
+	gap_x = 40,
+	gap_y = 247,
+	no_buffers = true,
+	cpu_avg_samples = 1,
+	uppercase = false,
+	border_inner_margin = 15,
+
+--colors
+	color0 = '#bbb',
+	color1 = '#2CA2A8',
+	color2 = '#aaa',
+	color3 = '#ddd',
+
+};
+
+conky.text = [[
+${color1}${font Oswald:size=10:bold}PROCESSES ${color3} ${hr 2}
+${color3}${font Noto Sans:size=10}
+CPU Clock Speed: ${alignr}${color1}${freq_g} GHz
+${color0} Usage ${color1} $cpu% ${color1} ${threads} ${color0} processes 
+  |__CPU1 : ${color1}${cpu cpu1}% ${alignr}${cpubar cpu1 6,120}${color0}
+  |__CPU2 : ${color1}${cpu cpu2}% ${alignr}${cpubar cpu2 6,120}${color0}
+  |__CPU3 : ${color1}${cpu cpu3}% ${alignr}${cpubar cpu3 6,120}${color0}
+  |__CPU4 : ${color1}${cpu cpu4}% ${alignr}${cpubar cpu4 6,120}${color0}
+${color3}${font Noto Sans:size=10} ${color3}
+Top CPU Usage:${color0}
+  |__${top name 1}$alignr${color1}${top cpu 1}%${color0}
+  |__${top name 2}$alignr${color1}${top cpu 2}%${color0}
+  |__${top name 3}$alignr${color1}${top cpu 3}%${color0}
+  |__${top name 4}$alignr${color1}${top cpu 4}%${color0}
+${color3}${font Noto Sans:size=10} ${color3}
+Top RAM Usage:${color0} 
+  |__${top_mem name 1}${alignr}${color1}${top_mem mem_res 1}${color0}
+  |__${top_mem name 2}${alignr}${color1}${top_mem mem_res 2}${color0}
+  |__${top_mem name 3}${alignr}${color1}${top_mem mem_res 3}${color0}
+  |__${top_mem name 4}${alignr}${color1}${top_mem mem_res 4}]];
