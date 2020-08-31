@@ -32,7 +32,7 @@ conky.config = {
 	default_bar_width = 144, default_bar_height = 6,
 
 --colors
-	color1 = '#2CA2A8',
+	color1 = '#88C0D0',
 	color2 = '#aaa',
 	color3 = '#ddd',
 

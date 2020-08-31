@@ -32,7 +32,8 @@ conky.config = {
 
 --colors
 	color0 = '#bbb',
-	color1 = '#2CA2A8',
+	color1 = '#09D5C5',
+	--color1 = '#16A085',
 	color2 = '#aaa',
 	color3 = '#ddd',
 
@@ -48,5 +49,5 @@ ${color3}${font Noto Sans:size=10}|__Movies: ${alignc}${color1}${font Noto Sans:
 
 ${color1}${font Oswald:size=10:bold}EXTERNAL ${color3} ${hr 2}
 
-${color3}${font Noto Sans:size=10}|__Backup: ${alignc}${color1}${font Noto Sans:size=10} ${fs_free /run/media/akya/Backup} / ${color0}${fs_size /run/media/akya/Backup}${alignr}${color1}${fs_used_perc /run/media/akya/Backup}%
-${color3}${font Noto Sans:size=10}|__Dump: ${alignc}${color1}${font Noto Sans:size=10} ${fs_free /run/media/akya/Dump} / ${color0}${fs_size /run/media/akya/Dump}${alignr}${color1}${fs_used_perc /run/media/akya/Dump}%]];
+${color3}${font Noto Sans:size=10}|__Backup: ${alignc}${color1}${font Noto Sans:size=10} ${fs_free /run/media/akya/backup} / ${color0}${fs_size /run/media/akya/backup}${alignr}${color1}${fs_used_perc /run/media/akya/backup}%
+${color3}${font Noto Sans:size=10}|__Dump: ${alignc}${color1}${font Noto Sans:size=10} ${fs_free /run/media/akya/dump} / ${color0}${fs_size /run/media/akya/dump}${alignr}${color1}${fs_used_perc /run/media/akya/dump}%]];

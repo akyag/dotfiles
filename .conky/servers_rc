@@ -33,7 +33,8 @@ conky.config = {
 
 --colors
 	color0 = '#bbb',
-	color1 = '#2CA2A8',
+	color1 = '#09D5C5',
+	--color1 = '#16A085',
 	color2 = '#aaa',
 	color3 = '#ddd',
 	color4 = 'FF0000',

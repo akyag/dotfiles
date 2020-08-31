@@ -1,10 +1,9 @@
 conky.config = {
 	background = false,
-	font = 'Noto Sans:size=10',
+	font = 'Noto sans:size=10',
 	use_xft = true,
 	xftalpha = 0.9,
-	update_interval = 2,
-	imlib_cache_size = 0,
+	update_interval = 1,
 	total_run_times = 0,
 	own_window = true,
 	own_window_type = 'dock',
@@ -14,21 +13,24 @@ conky.config = {
 	own_window_argb_value = 180,
 	own_window_colour = '#000000',
 	double_buffer = true,
-	minimum_width = 225,
+	minimum_width = 505,
+	maximum_width = 505,
+	minimum_height = 120,
+	--maximum_size 220
 	draw_shades = false,
 	draw_outline = false,
 	draw_borders = false,
 	draw_graph_borders = true,
 	default_color = '#101010',
 	default_shade_color = '#101010',
-	default_outline_color = 'green',
 	alignment = 'top_right',
-	gap_x = 320,
-	gap_y = 80,
+	gap_x = 40,--320
+	gap_y = 840,--530
 	no_buffers = true,
 	cpu_avg_samples = 1,
 	uppercase = false,
 	border_inner_margin = 15,
+	default_bar_width = 144, default_bar_height = 6,
 
 --colors
 	color0 = '#bbb',
@@ -40,7 +42,7 @@ conky.config = {
 };
 
 conky.text = [[
-${color1}${font Oswald:size=10:bold}MEMORY ${color3} ${hr 2}
-
-${color3}${font Noto Sans:size=10}Ram: ${memperc}% ${alignr}${color1}${membar 5,140}
-${color1}${font Noto Sans:size=10}${alignc 49}${mem} ${color0}/ ${memmax}]];
+${color1}${font Oswald:size=10:bold}NEWS ${color3} ${hr 2}
+${color3}${font Noto Sans:size=10}
+${rss http://rss.cnn.com/rss/edition.rss 1 item_titles 8}
+]];
